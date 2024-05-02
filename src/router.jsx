@@ -1,5 +1,5 @@
 // In router.jsx
-import { createBrowserRouter, Route } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom'
 import Root from './components/Root.jsx';
 
 import Cart from './components/ShoppingCart/Cart.jsx';
@@ -10,7 +10,7 @@ import Login from './components/Login/Login.jsx'; // Justera sökvägen efter be
 
 // import NotFoundPage from './components/NotFoundPage.jsx';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
 	{
 		path: "/",
 		element: <Root />,
