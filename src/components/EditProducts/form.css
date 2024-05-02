@@ -1,0 +1,82 @@
+.bubble {
+ 	padding: 0.9375em 1.875em;
+    margin: 0.625em 0;
+    border: 0.0625em solid #ccc;
+    border-radius: 1.5625em;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+
+.bubble-desc {
+ 	padding: 0.9375em 1.875em;
+    margin: 0.625em 0;
+    border: 0.0625em solid #ccc;
+    border-radius: 1.5625em;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+
+.product-item{
+    width: 100%;
+    display: flex;
+    gap: 2em;
+    align-items: center;
+
+
+}
+
+.product-image {
+    width: 30%;
+    min-width: 200px;
+    max-width: 300px;
+
+}
+
+.product-image > img{
+   width: 100%;
+    min-width: 200px;
+    max-width: 300px;
+    border-radius: 1em;
+    object-fit: fill;
+}
+
+
+.product-info{
+    width: 100%;
+}
+
+.product-edit{
+    width: 15%;
+}
+
+
+
+
+.edit-info{
+	width: 100%;
+    border: 1px solid black;
+    display: flex;
+	flex-direction: column;
+    place-items: center;
+    color:black;
+
+    height: auto;
+
+	flex-grow: 1;
+	gap: 0.65em;
+}
+
+
+.edit-info form{
+    width: 100%;
+    display: flex;
+}
+
+.name-change,
+.occ-change {
+	flex-grow: 1;
+    display:flex;
+    flex-direction: column;
+}
