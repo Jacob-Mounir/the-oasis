@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../../data/store.js';
+import Header from '../Header/Header.jsx';
+import './login.css'
 
 function Login() {
 	const [username, setUsername] = useState('');
@@ -20,11 +22,16 @@ function Login() {
 	};
 
 	return (
-		<div>
+<>
+		<Header/>
+		<section className='login-section'>
+		<div className='login-form'>
 			<input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Användarnamn" />
 			<input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Lösenord" />
 			<button onClick={handleLogin}>Logga in</button>
 		</div>
+		</section>
+		</>
 	);
 }
 
