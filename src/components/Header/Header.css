@@ -7,50 +7,86 @@ header{
 
 }
 
-.splash-menu{
-	top: 0;
-	left: 70%;
-	width: 30%;
-	height: 30%;
-	z-index: 1000;
-	background-color: #de9629;
-	clip-path: circle(50% at 100% 0);
-	transition: all 0.8s ease;
-	position: absolute;
-	color: white;
+.menu-toggle {
+  position: fixed; /* Keep if necessary */
+  top: 10px; /* Adjust according to your layout */
+  right: 15px; /* Position it in the corner for typical 'close' button placement */
+  width: 48px; /* Enough size to be clickable but not too large to overlap other elements */
+  height: 48px; /* Same as width */
+  padding: 10px; /* Padding for clickable area */
+  margin: 0;
+  font-size: 2em;
+  border: none;
+  background: transparent; /* Ensures it does not block content */
+  cursor: pointer; /* Clearly indicates it's clickable */
+}
+
+.menu-toggle:hover, .menu-toggle:focus {
+  transform: scale(1.1); /* Keep transformations minimal */
+}
+
+
+
+
+
+.splash-menu {
+  top: 0;
+  left: 70%;
+  width: 30%;
+  height: 30%;
+  z-index: 1;
+  background-color: #de9629;
+  clip-path: circle(50% at 100% 0);
+  transition: all 0.8s ease;
+  position: absolute;
+  color: #de9629;
 
 }
 
-.splash-menu:hover{
-	clip-path: circle(100%);
-	width: 100vh;
-	height: 100vh;
-	left: 0;
-	width: 100%;
+.splash-menu > * {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.splash-menu > *{
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.splash-menu.open {
+  clip-path: circle(100%);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: white;
+}
+
+
+
+.underline{
+	text-decoration: underline;
 }
 
 .link-container  {
+	z-index: 2000;
 	width: 100%;
+	height: 100%;
 	justify-content: center;
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	color: #de9629;
 }
 
 .link-container > a {
-	color: #f1f1f1;
 	font-size: 2em;
-
+	color: #f1f1f1;
 	font-weight: 500;
 	text-decoration: none;
+
+}
+
+.link-container > a:hover {
+
+	color: #909090;
+;
 
 }
 
@@ -61,35 +97,6 @@ header{
 
 }
 
-
-.cart-icon-container {
-	display: inline-flex;
-    position: absolute; /* Fixed positioning relative to the viewport */
-    top: 4%; /* 5% from the bottom */
-    left: 5%; /* 5% from the left */
-    background-image: url('./cart.png');
-    width: 60px;
-    height: 60px;
-    background-size: contain;
-    background-repeat: no-repeat;
-	transition: 300ms;
-
-}
-
-.cart-icon-container:hover {
-	transform: scale(120%);
- }
-
-.cart-counter {
- 	background-color: #ff5733;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 10px;
-    position: absolute;
-    top: -10px;
-    right: -7px;
-    font-size: 12px;
-}
 
 
 .logo * {

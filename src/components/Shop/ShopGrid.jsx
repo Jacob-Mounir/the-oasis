@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useStore } from '../../data/store.js';
+import { NavLink } from 'react-router-dom';
 import { getProducts } from '../../data/crud.js';
 import './shop.css';
+
 
 const ShopGrid = () => {
 	const { addToCart } = useStore(state => ({
 		addToCart: state.addToCart
 	}));
+
+
 
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
@@ -39,9 +43,17 @@ const ShopGrid = () => {
 		setSortField(sortField === 'name' ? 'price' : 'name');
 	};
 
-	const toggleSortOrder = () => {
-		setSortOrder(sortOrder === 'ascending' ? 'descending' : 'ascending');
-	};
+
+	function CartIcon() {
+		const cartCount = useStore(state => state.cart.reduce((count, item) => count + item.quantity, 0));
+
+		return (
+			<div className="cart-icon-container">
+				{cartCount > 0 && <div className="cart-counter">{cartCount}</div>}
+			</div>
+		);
+	}
+
 
 	const filteredProducts = products.filter(product =>
 		product.title.toLowerCase().includes(searchQuery) ||
@@ -61,9 +73,16 @@ const ShopGrid = () => {
 		<>
 			<section className="shopSection">
 
+				<div>
+					<NavLink to="/cart"><CartIcon /></NavLink>
+				</div>
+
+
 			<div className='searchSection'>
 
-		
+
+
+
 					<input
 						className="search-bar"
 						type="text"
@@ -73,7 +92,8 @@ const ShopGrid = () => {
 
 					/>
 
-
+					<div></div>
+					
 				<div className="sorting-controls">
 					<span onClick={toggleSortField}>Sort by <span className='order-name'>{sortField.charAt(0).toUpperCase() + sortField.slice(1)}</span> </span>
 					<span className={sortOrder === 'ascending' ? 'sort-arrow active' : 'sort-arrow inactive'} onClick={() => setSortOrder('ascending')}>

@@ -18,6 +18,7 @@ function Login() {
 			navigate('/edit');
 		} else {
 			alert('Felaktigt användarnamn eller lösenord');
+			//Lägg till validering istället för alert
 		}
 	};
 

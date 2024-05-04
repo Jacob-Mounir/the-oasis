@@ -20,6 +20,22 @@ width: 60%;
 
 }
 
+
+.CTA > a > button{
+	background-color: #f1f1f1;
+	color: rgb(48, 48, 48);
+
+
+}
+
+.CTA > a > button:hover{
+	background-color: #a9a9a979;
+	color: #ffffff;
+
+
+}
+
+
 .slider-text h5{
 
 	font-size: 30px;

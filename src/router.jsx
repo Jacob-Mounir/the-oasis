@@ -6,7 +6,8 @@ import Cart from './components/ShoppingCart/Cart.jsx';
 import EditPage from './components/EditPage.jsx';
 import LandingPage from './components/LandingPage.jsx';
 LandingPage
-import Login from './components/Login/Login.jsx'; // Justera sökvägen efter behov
+import Login from './components/Login/Login.jsx';
+import AllProducts from './components/AllProducts/AllProducts.jsx';
 
 // import NotFoundPage from './components/NotFoundPage.jsx';
 
@@ -16,20 +17,34 @@ const router = createHashRouter([
 		element: <Root />,
 		children: [
 
-			{ path: "/cart",
-			element: <Cart /> }
-		,
-			{ path: "/edit",
-			element: <EditPage /> }
-		,
+			{
+				path: "/cart",
+				element: <Cart />
+			}
+			,
+			{
+				path: "/edit",
+				element: <EditPage />
+			}
+			,
+			{
+				path: "/products",
+				element: <AllProducts />
+			}
+			,
+			{
+				path: "/login",
+				element: <Login />
+			}
+			,
 
-		{ path: "/login", element: <Login /> },
 
+			{
+				path: "/",
+				element: <LandingPage />
+			}
 
-			{ path: "/",
-			element: <LandingPage /> }
-
-			]	// errorElement: <NotFoundPage />
+		]	// errorElement: <NotFoundPage />
 	}
 ]);
 

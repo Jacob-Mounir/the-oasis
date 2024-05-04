@@ -1,4 +1,6 @@
 import './slider.css'
+import { NavLink } from 'react-router-dom'
+
 
 const Slider = () => {
 
@@ -13,7 +15,9 @@ const Slider = () => {
 
 
 				<div className='CTA'>
+					<NavLink to='/products'>
 					<button> Browse all </button>
+					</NavLink>
 				</div>
 			</div>
 
