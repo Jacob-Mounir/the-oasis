@@ -1,17 +1,10 @@
-.bubble {
- 	padding: 0.9375em 1.875em;
-    margin: 0.625em 0;
-    border: 0.0625em solid #ccc;
-    border-radius: 1.5625em;
-    width: 80%;
-    box-sizing: border-box;
+.input-error {
+    border: 2px solid red;
 }
 
-
-.bubble-desc {
- 	padding: 0.9375em 1.875em;
+.bubble, .bubble-desc {
+    padding: 0.9375em 1.875em;
     margin: 0.625em 0;
-    border: 0.0625em solid #ccc;
     border-radius: 1.5625em;
     width: 80%;
     box-sizing: border-box;
@@ -80,3 +73,5 @@
     display:flex;
     flex-direction: column;
 }
+
+
